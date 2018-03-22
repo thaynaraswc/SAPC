@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registroPessoa/create', 'RegistroPessoaController@index')->name('registroPessoa/create');
+Route::get('/registroEmpresa/create', 'RegistroEmpresaController@index')->name('registroEmpresa/create');
+Route::get('/registroOpcoes/show', 'RegistroOpcoesController@index')->name('/registroOpcoes/show');
+
+Route::get('/alvaraAnual/create', 'AlvaraAnualController@index')->name('/alvaraAnual/create');
