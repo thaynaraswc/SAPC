@@ -49,13 +49,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="nomeFantasia">Nome Fantasia</label>
-                            <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome fantasia">
+                            <input type="text" class="form-control" id="nomeFantasia" name="nomeFantasia" placeholder="Nome fantasia">
                         </div>
                     </div>
                     <div class="col">
                     <div class="form-group">
                             <label for="cnpj">CNPJ</label>
-                            <input type="text" class="form-control" id="cpnj" placeholder="CNPJ">
+                            <input type="text" class="form-control" id="cpnj" name="cpnj" placeholder="CNPJ">
                         </div>
                     </div>
                 </div>
@@ -63,13 +63,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="razaoSocial">Razão Social</label>
-                            <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
+                            <input type="text" class="form-control" id="razaoSocial" name="razaoSocial" placeholder="Razão Social">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="inscricaoEstadual">Inscrição Estadual</label>
-                            <input type="text" class="form-control" id="inscricaoEstadual" placeholder="Inscrição Estadual">
+                            <input type="text" class="form-control" id="inscricaoEstadual" name="inscricaoEstadual" placeholder="Inscrição Estadual">
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <div class="col">
                         <div class="form-group">
                         <label for="tipoEnderecoEmpresa">Tipo de endereço</label>
-                        <select class="form-control" id="tipoEnderecoEmpresa">
+                        <select class="form-control" id="tipoEnderecoEmpresa" name="tipoEnderecoEmpresa">
                         <option>Comercial</option>
                         <option>Residencial</option>
                         </select>
@@ -87,40 +87,40 @@
                     <div class="col">
                     <div class="form-group">
                             <label for="cepEnderecoEmpresa">CEP</label>
-                            <input type="text" class="form-control" id="cepEnderecoEmpresa" placeholder="CEP">
+                            <input type="text" class="form-control" id="cepEnderecoEmpresa" name="cepEnderecoEmpresa" placeholder="CEP">
                         </div>
                     </div>
                     <div class="col">
                     <div class="form-group">
                             <label for="bairoEnderecoEmpresa">Bairro</label>
-                            <input type="text" class="form-control" id="bairoEnderecoEmpresa" placeholder="Bairro">
+                            <input type="text" class="form-control" id="bairoEnderecoEmpresa" name="bairoEnderecoEmpresa" placeholder="Bairro">
                         </div>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="enderecoEmpresa">Endereço</label>
-                    <input type="text" class="form-control" id="enderecoEmpresa" placeholder="endereco">
+                    <input type="text" class="form-control" id="enderecoEmpresa" name="enderecoEmpresa" placeholder="endereco">
                 </div>
 
                 <div class="row" >
                 <div class="col">
                     <div class="form-group">
                         <label for="numeroEnderecoEmpresa">Número</label>
-                        <input type="text" class="form-control" id="numeroEnderecoEmpresa" placeholder="Número">
+                        <input type="text" class="form-control" id="numeroEnderecoEmpresa" name="numeroEnderecoEmpresa" placeholder="Número">
                     </div>
                     </div>
                 
                     <div class="col">
                         <div class="form-group">
                             <label for="complementoEnderecoEmpresa">Complemento</label>
-                            <input type="text" class="form-control" id="complementoEnderecoEmpresa" placeholder="Complemento">
+                            <input type="text" class="form-control" id="complementoEnderecoEmpresa" name="complementoEnderecoEmpresa" placeholder="Complemento">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="estadoEnderecoEmpresa">Estado</label>
-                            <select class="form-control" id="estadoEnderecoEmpresa">
+                            <select class="form-control" id="estadoEnderecoEmpresa" name="estadoEnderecoEmpresa">
                             <option>Tocantins</option>
                             <option>Pará</option>
                             <option>Maranhão</option>
@@ -132,7 +132,7 @@
                 <div class="col">
                     <div class="form-group">
                     <label for="cidadeEnderecoEmpresa">Cidade</label>
-                            <select class="form-control" id="cidadeEnderecoEmpresa">
+                            <select class="form-control" id="cidadeEnderecoEmpresa" name="cidadeEnderecoEmpresa">
                             <option>Palmas</option>
                             <option>Gurupi</option>
                             <option>Araguaína</option>
@@ -144,7 +144,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="referenciaEnderecoEmpresa">Referência</label>
-                            <textarea class="form-control" id="referenciaEnderecoEmpresa" rows="2"></textarea>
+                            <textarea class="form-control" id="referenciaEnderecoEmpresa" name="referenciaEnderecoEmpresa" rows="2"></textarea>
                         </div>
                 </div>
                 </div>
