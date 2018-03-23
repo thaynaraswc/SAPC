@@ -16,6 +16,7 @@ class CreateRegistroPessoasTable extends Migration
         Schema::create('registro_pessoas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('escolaridade');
+            $table->string('nacionalidade');
             /*$table->string('nomeResponsavelEmp');
             $table->string('CPFResponsavelEmp');
             $table->string('identidadeResponsavelEmp');
@@ -24,14 +25,12 @@ class CreateRegistroPessoasTable extends Migration
             $table->string('nomePaiResponsavelEmp');
             $table->string('dataNascimento');
             $table->string('sexoPessoa');
-            $table->string('nacionalidadePessoa');
             $table->integer('paisNascimento');
             $table->integer('estadoNascimento');
             $table->integer('cidadeNascimento');
             $table->string('profissao');
             $table->string('localTrabalho');
-            $table->integer('estadoCivil');
-            $table->integer('grauDeInstrucao');*/
+            $table->integer('estadoCivil');*/
             $table->timestamps();
         });
     }

@@ -102,8 +102,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="nacionalidadePessoa">Nacionalidade</label>
-                                            <select class="form-control" id="nacionalidadePessoa" name="nacionalidadePessoa">
+                                            <label for="nacionalidades">Nacionalidade</label>
+                                            <select class="form-control" id="nacionalidades" name="nacionalidades">
                                             <option>Brasileiro</option>
                                             <option>Estrangeiro</option>
                                             

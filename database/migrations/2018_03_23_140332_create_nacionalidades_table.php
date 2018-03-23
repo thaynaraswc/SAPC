@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGrauEscolaridadesTable extends Migration
+class CreateNacionalidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateGrauEscolaridadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('grau_escolaridades', function (Blueprint $table) {
+        Schema::create('nacionalidades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descricao');
-            
-        
-
+            $table->strig('descricao');
             $table->timestamps();
         });
 
-        Schema::table('grau_escolaridades', function(Blueprint $table) {
-            $table->foreign('escolaridade')->references('id')->on('registro_pessoas');
+        Schema::table('nacionalidades', function(Blueprint $table) {
+            $table->foreign('nacionalidade')->references('id')->on('registro_pessoas');
         });
     }
 
@@ -34,6 +31,6 @@ class CreateGrauEscolaridadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grau_escolaridades');
+        Schema::dropIfExists('nacionalidades');
     }
 }
