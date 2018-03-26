@@ -13,7 +13,7 @@
             
         </ol>
     </nav>
-    </div>
+</div>
 
     <div style="margin-top: 5%" class="container">
         <div class="card">
@@ -44,42 +44,42 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="nomeResponsavelEmp">Nome</label>
-                                            <input type="text" class="form-control" id="nomeResponsavelEmp"  name="nomeResponsavelEmp" placeholder="Nome">
+                                            <label for="nomePessoa">Nome</label>
+                                            <input type="text" class="form-control" id="nomePessoa"  name="nomePessoa" placeholder="Nome">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="CPFResponsavelEmp">CPF</label>
-                                            <input type="text" class="form-control" id="CPFResponsavelEmp" name="CPFResponsavelEmp" placeholder="CPF">
+                                            <label for="CPFPessoa">CPF</label>
+                                            <input type="text" class="form-control" id="CPFPessoa" name="CPFPessoa" placeholder="CPF">
                                         </div>
                                     </div>
                                 </div>   
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="identidadeResponsavelEmp">Nº identidade</label>
-                                            <input type="text" class="form-control" id="identidadeResponsavelEmp" name="identidadeResponsavelEmp" placeholder="Nº identidade">
+                                            <label for="identidadePessoa">Nº identidade</label>
+                                            <input type="text" class="form-control" id="identidadePessoa" name="identidadePessoa" placeholder="Nº identidade">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="dataEmissao">Data de emissão</label>
-                                            <input type="date" class="form-control" id="dataEmissao" name="dataEmissao">
+                                            <label for="dataEmissaoIdentidade">Data de emissão</label>
+                                            <input type="date" class="form-control" id="dataEmissaoIdentidade" name="dataEmissaoIdentidade">
                                         </div>
                                     </div>
                                 </div>   
                                     <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="nomeMaeResponsavelEmp">Nome da mãe</label>
-                                            <input type="text" class="form-control" id="nomeMaeResponsavelEmp" namme="nomeMaeResponsavelEmp" placeholder="Nome da mãe">
+                                            <label for="nomeMaePessoa">Nome da mãe</label>
+                                            <input type="text" class="form-control" id="nomeMaePessoa" namme="nomeMaePessoa" placeholder="Nome da mãe">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="nomePaiResponsavelEmp">Nome do pai</label>
-                                            <input type="text" class="form-control" id="nomePaiResponsavelEmp" name="nomePaiResponsavelEmp" placeholder="Nome do pai">
+                                            <label for="nomePaiPessoa">Nome do pai</label>
+                                            <input type="text" class="form-control" id="nomePaiPessoa" name="nomePaiPessoa" placeholder="Nome do pai">
                                         </div>
                                     </div>
                                 </div>

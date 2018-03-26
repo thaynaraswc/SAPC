@@ -19,9 +19,7 @@ class CreateNacionalidadesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('nacionalidades', function(Blueprint $table) {
-            $table->foreign('nacionalidade')->references('id')->on('registro_pessoas');
-        });
+        
     }
 
     /**

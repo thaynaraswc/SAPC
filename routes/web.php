@@ -23,3 +23,6 @@ Route::get('/registroEmpresa/create', 'RegistroEmpresaController@index')->name('
 Route::get('/registroOpcoes/show', 'RegistroOpcoesController@index')->name('/registroOpcoes/show');
 
 Route::get('/alvaraAnual/create', 'AlvaraAnualController@index')->name('/alvaraAnual/create');
+
+
+Route::get('/ferramentasAdm/FinalidadeAlvara/create', 'FerramentasAdmController@index')->name('ferramentasAdm/FinalidadeAlvara/create');

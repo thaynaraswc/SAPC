@@ -20,6 +20,7 @@ class CreateMunicipiosTable extends Migration
             $table->integer('estado')->unsigned();
             $table->timestamps();
         });
+        
         Schema::table('municipios', function(Blueprint $table) {
             $table->foreign('estado')->references('id')->on('estados');
         });

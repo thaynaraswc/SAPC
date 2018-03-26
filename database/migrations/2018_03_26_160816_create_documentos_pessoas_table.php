@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGrauEscolaridadesTable extends Migration
+class CreateDocumentosPessoaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateGrauEscolaridadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('grau_escolaridades', function (Blueprint $table) {
+        Schema::create('documentos_pessoa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descricao');
-            
-        
-
+            $table->string('CPFPessoa');
+            $table->string('identidadePessoa');
+            $table->string('dataEmissaoIdentidade');
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -32,6 +29,6 @@ class CreateGrauEscolaridadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grau_escolaridades');
+        Schema::dropIfExists('documentos_pessoa');
     }
 }
