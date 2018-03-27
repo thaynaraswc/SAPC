@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FerramentasAdm as Ferramentas;
+use App\Models\FrmtFinAlvara as FinAlvara;
 use Illuminate\Http\Request;
 
-class FerramentasAdmController extends Controller
+class FrmtFinAlvaraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FerramentasAdmController extends Controller
      */
     public function index()
     {
-       
+        
     }
 
     /**
@@ -24,8 +24,8 @@ class FerramentasAdmController extends Controller
      */
     public function create()
     {
-       
-        
+        $finAlvara = FinAlvara::all();
+        return view('ferramentasAdm/FinalidadeAlvara/create', compact('finAlvara'));
     }
 
     /**
@@ -36,16 +36,21 @@ class FerramentasAdmController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $FerramentasAdmn = new FinAlvara;
+        $FerramentasAdmn->nome = $request->nomeFinalidadeAlvara;
+        $FerramentasAdmn->descricao = $request->descricaoFinalidadeAlvara;
+        $FerramentasAdmn->valor = $request->valorFinalidadeAlvara;
+        $FerramentasAdmn->save();
+        return redirect('ferramentasAdm/FinalidadeAlvara/create'); 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function show(FerramentasAdm $ferramentasAdm)
+    public function show(FrmtFinAlvara $frmtFinAlvara)
     {
         //
     }
@@ -53,10 +58,10 @@ class FerramentasAdmController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function edit(FerramentasAdm $ferramentasAdm)
+    public function edit(FrmtFinAlvara $frmtFinAlvara)
     {
         //
     }
@@ -65,10 +70,10 @@ class FerramentasAdmController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FerramentasAdm $ferramentasAdm)
+    public function update(Request $request, FrmtFinAlvara $frmtFinAlvara)
     {
         //
     }
@@ -76,10 +81,10 @@ class FerramentasAdmController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FerramentasAdm $ferramentasAdm)
+    public function destroy(FrmtFinAlvara $frmtFinAlvara)
     {
         //
     }

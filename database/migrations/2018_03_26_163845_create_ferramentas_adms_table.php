@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFerramentasAdmTable extends Migration
+class CreateFerramentasAdmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFerramentasAdmTable extends Migration
      */
     public function up()
     {
-        Schema::create('ferramentas_adm', function (Blueprint $table) {
+        Schema::create('ferramentas_adms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
             $table->string('descricao');
@@ -29,6 +29,6 @@ class CreateFerramentasAdmTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ferramentas_adm');
+        Schema::dropIfExists('ferramentas_adms');
     }
 }

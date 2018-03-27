@@ -17,8 +17,8 @@
     <div class="card">
         <h5 class="card-header text-center">Ferramentas do administrador</h5>
         <div class="card-body text-center">
-            <form>
-            {{ csrf_field() }}
+            <form  method="POST" action="/ferramentasAdm/FinalidadeAlvara/create" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -47,5 +47,30 @@
         </div>
     </div>
 </div>
+<div class="container" style="margin-top: 5%">
+    <div class="card">
+        <h5 class="card-header text-center">Profissões já cadastradas</h5>
+        <div class="card-body text-center">
+            <table class="table table-hover  table-sm table-dark text-center">
 
+            <tr  class="bg-primary">
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Valor (R$)</th>
+            </tr>
+            @foreach($finAlvara as $fin)
+            <tr scope="row">
+            <td>{{$fin->id}}</td>
+
+            <td>{{$fin->nome}}</td>
+            <td>{{$fin->descricao}}</td>
+            <td>{{$fin->valor}}</td>
+
+            </tr>
+            @endforeach
+            </table>
+        </div>
+    </div>
+</div>
 @endsection

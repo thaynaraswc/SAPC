@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FerramentasAdm as Ferramentas;
+use App\Models\FrmtProfPessoa as profpessoa;
 use Illuminate\Http\Request;
 
-class FerramentasAdmController extends Controller
+class FrmtProfPessoaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +24,8 @@ class FerramentasAdmController extends Controller
      */
     public function create()
     {
-       
-        
+        $prof = profpessoa::all();
+        return view('/ferramentasAdm/ProfissaoPessoa/create', compact('prof'));
     }
 
     /**
@@ -36,16 +36,19 @@ class FerramentasAdmController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $prof = new profpessoa;
+        $prof->descricao = $request->nomeProfissao;
+        $prof->save();
+        return redirect('/ferramentasAdm/ProfissaoPessoa/create'); 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function show(FerramentasAdm $ferramentasAdm)
+    public function show(FrmtProfPessoa $frmtProfPessoa)
     {
         //
     }
@@ -53,10 +56,10 @@ class FerramentasAdmController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function edit(FerramentasAdm $ferramentasAdm)
+    public function edit(FrmtProfPessoa $frmtProfPessoa)
     {
         //
     }
@@ -65,10 +68,10 @@ class FerramentasAdmController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FerramentasAdm $ferramentasAdm)
+    public function update(Request $request, FrmtProfPessoa $frmtProfPessoa)
     {
         //
     }
@@ -76,10 +79,10 @@ class FerramentasAdmController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\FerramentasAdm  $ferramentasAdm
+     * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FerramentasAdm $ferramentasAdm)
+    public function destroy(FrmtProfPessoa $frmtProfPessoa)
     {
         //
     }

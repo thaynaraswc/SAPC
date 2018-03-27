@@ -77,7 +77,7 @@
                     <button type="button" class="btn btn-primary btn-lg">Sexo</button>
                 </a>
 
-                <a href="/registroEmpresa/create">
+                <a href="/ferramentasAdm/ProfissaoPessoa/create">
                     <button type="button" class="btn btn-primary btn-lg">Profissão</button>
                 </a>
 

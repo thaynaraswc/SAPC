@@ -25,4 +25,8 @@ Route::get('/registroOpcoes/show', 'RegistroOpcoesController@index')->name('/reg
 Route::get('/alvaraAnual/create', 'AlvaraAnualController@index')->name('/alvaraAnual/create');
 
 
-Route::get('/ferramentasAdm/FinalidadeAlvara/create', 'FerramentasAdmController@index')->name('ferramentasAdm/FinalidadeAlvara/create');
+Route::get('/ferramentasAdm/FinalidadeAlvara/create', 'FrmtFinAlvaraController@create')->name('ferramentasAdm/FinalidadeAlvara/create');
+Route::post('/ferramentasAdm/FinalidadeAlvara/create', 'FrmtFinAlvaraController@store')->name('ferramentasAdm/FinalidadeAlvara/create');
+
+Route::get('/ferramentasAdm/ProfissaoPessoa/create', 'FrmtProfPessoaController@create')->name('ferramentasAdm/ProfissaoPessoa/create');
+Route::post('/ferramentasAdm/ProfissaoPessoa/create', 'FrmtProfPessoaController@store')->name('ferramentasAdm/ProfissaoPessoa/create');
