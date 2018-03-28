@@ -24,7 +24,7 @@ class FrmtProfPessoaController extends Controller
      */
     public function create()
     {
-        $prof = profpessoa::all();
+        $prof = profpessoa::orderBy('descricao', 'asc')->get();
         return view('/ferramentasAdm/ProfissaoPessoa/create', compact('prof'));
     }
 
@@ -59,9 +59,12 @@ class FrmtProfPessoaController extends Controller
      * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function edit(FrmtProfPessoa $frmtProfPessoa)
+    public function edit(profpessoa $prof)
     {
-        //
+        $prof = profpessoa::where('id', $prof->id)->get()->first();
+
+        //dd($localidade);
+        return view('/ferramentasAdm/ProfissaoPessoa/edit', compact('prof'));
     }
 
     /**
@@ -71,9 +74,12 @@ class FrmtProfPessoaController extends Controller
      * @param  \App\Models\FrmtProfPessoa  $frmtProfPessoa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FrmtProfPessoa $frmtProfPessoa)
+    public function update(Request $request, $id)
     {
-        //
+        $prof = profpessoa::find($id);
+        $prof->descricao = $request->nomeProfissao;
+        $prof->save();
+        return redirect('/ferramentasAdm/ProfissaoPessoa/create'); 
     }
 
     /**

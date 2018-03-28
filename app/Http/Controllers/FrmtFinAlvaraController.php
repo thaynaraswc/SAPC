@@ -24,7 +24,7 @@ class FrmtFinAlvaraController extends Controller
      */
     public function create()
     {
-        $finAlvara = FinAlvara::all();
+        $finAlvara = FinAlvara::orderBy('nome', 'asc')->get();;
         return view('ferramentasAdm/FinalidadeAlvara/create', compact('finAlvara'));
     }
 
@@ -36,11 +36,11 @@ class FrmtFinAlvaraController extends Controller
      */
     public function store(Request $request)
     {
-        $FerramentasAdmn = new FinAlvara;
-        $FerramentasAdmn->nome = $request->nomeFinalidadeAlvara;
-        $FerramentasAdmn->descricao = $request->descricaoFinalidadeAlvara;
-        $FerramentasAdmn->valor = $request->valorFinalidadeAlvara;
-        $FerramentasAdmn->save();
+        $finAlvara = new FinAlvara;
+        $finAlvara->nome = $request->nomeFinalidadeAlvara;
+        $finAlvara->descricao = $request->descricaoFinalidadeAlvara;
+        $finAlvara->valor = $request->valorFinalidadeAlvara;
+        $finAlvara->save();
         return redirect('ferramentasAdm/FinalidadeAlvara/create'); 
     }
 
@@ -61,9 +61,12 @@ class FrmtFinAlvaraController extends Controller
      * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function edit(FrmtFinAlvara $frmtFinAlvara)
+    public function edit(FinAlvara $finAlvara)
     {
-        //
+        $finAlvara = FinAlvara::where('id', $finAlvara->id)->get()->first();
+
+        //dd($localidade);
+        return view('ferramentasAdm/FinalidadeAlvara/edit', compact('finAlvara'));
     }
 
     /**
@@ -73,9 +76,16 @@ class FrmtFinAlvaraController extends Controller
      * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FrmtFinAlvara $frmtFinAlvara)
+    public function update(Request $request, $id)
     {
-        //
+        $finAlvara = FinAlvara::find($id);
+        $finAlvara->nome = $request->nomeFinalidadeAlvara;
+        $finAlvara->descricao = $request->descricaoFinalidadeAlvara;
+        $finAlvara->valor = $request->valorFinalidadeAlvara;
+
+        $finAlvara->save();
+
+        return redirect('ferramentasAdm/FinalidadeAlvara/create');
     }
 
     /**
@@ -84,8 +94,17 @@ class FrmtFinAlvaraController extends Controller
      * @param  \App\Models\FrmtFinAlvara  $frmtFinAlvara
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FrmtFinAlvara $frmtFinAlvara)
+    public function destroy($id)
     {
-        //
+        $finAlvara = FinAlvara::find($id);
+        $nome= $finAlvara->nome;
+        try{
+
+            $finAlvara->delete();
+           
+            return redirect('ferramentasAdm/FinalidadeAlvara/create');
+        }catch(QueryException $e){
+            return $e;
+        }   
     }
 }

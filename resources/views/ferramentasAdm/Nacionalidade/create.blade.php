@@ -8,8 +8,8 @@
     <nav style="margin-top: 5%" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Início</a></li>
-            <li class="breadcrumb-item"><a href="/ferramentasAdm/show">Ferramentas Administrativas</a></li>
-            <li class="breadcrumb-item"><a href="/ferramentasAdm/ProfissaoPessoa/create">Cadastro de profissão</a></li>
+            <li class="breadcrumb-item"><a href="/ferramentasAdm/show">Ferramenta de administrador</a></li>
+            <li class="breadcrumb-item"><a href="/ferramentasAdm/Nacionalidade/create">Cadastro de nacionalidade</a></li>
         </ol>
     </nav>
 </div>
@@ -18,12 +18,12 @@
     <div class="card">
         <h5 class="card-header text-center">Ferramentas do administrador</h5>
         <div class="card-body text-center">
-            <form  method="POST" action="/ferramentasAdm/ProfissaoPessoa/create" enctype="multipart/form-data">
+            <form  method="POST" action="/ferramentasAdm/Nacionalidade/create" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 
                 <div class="form-group">
-                    <label for="nomeProfissao">Nome</label>
-                    <input type="text" class="form-control" id="nomeProfissao" name="nomeProfissao" placeholder="Profissão ...">
+                    <label for="nomeNacionalidade">Nome</label>
+                    <input type="text" class="form-control" id="nomeNacionalidade" name="nomeNacionalidade" placeholder="Nacionalidade ...">
                 </div>
 
                
@@ -35,30 +35,19 @@
 </div>
 <div class="container" style="margin-top: 5%">
     <div class="card">
-        <h5 class="card-header text-center">Profissões já cadastradas</h5>
+        <h5 class="card-header text-center">Nacionalidades já cadastradas</h5>
         <div class="card-body text-center">
-            <table class="table table-hover  table-sm  ">
+            <table class="table table-hover  table-sm  text-center">
 
             <tr  class="bg-primary">
             <th scope="col">Código</th>
             <th scope="col">Descricao</th>
-            <th>Opções</th>
             </tr>
-            @foreach($prof as $p)
+            @foreach($nacionalidade as $nac)
             <tr scope="row">
-            <td>{{$p->id}}</td>
+            <td>{{$nac->id}}</td>
 
-            <td>{{$p->descricao}}</td>
-            <td>
-                <form action="/ferramentasAdm/ProfissaoPessoa/{{$p->id}}" method="POST">
-                        {{ csrf_field() }}
-                        
-                    <a href="/ferramentasAdm/ProfissaoPessoa/{{$p->id}}/edit" >
-                    Editar</a>
-                    
-                </form>
-            </td>
-
+            <td>{{$nac->descricao}}</td>
 
             </tr>
             @endforeach

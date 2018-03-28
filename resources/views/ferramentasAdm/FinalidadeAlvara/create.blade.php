@@ -8,6 +8,7 @@
     <nav style="margin-top: 5%" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Início</a></li>
+            <li class="breadcrumb-item"><a href="/ferramentasAdm/show">Ferramentas Administrativas</a></li>
             <li class="breadcrumb-item"><a href="/ferramentasAdm/FinalidadeAlvara/create">Finalidade Alvará</a></li>
         </ol>
     </nav>
@@ -51,13 +52,14 @@
     <div class="card">
         <h5 class="card-header text-center">Profissões já cadastradas</h5>
         <div class="card-body text-center">
-            <table class="table table-hover  table-sm table-dark text-center">
+            <table class="table table-hover  table-sm text-center">
 
             <tr  class="bg-primary">
-            <th scope="col">Id</th>
+            <th scope="col">Código</th>
             <th scope="col">Nome</th>
             <th scope="col">Descricao</th>
             <th scope="col">Valor (R$)</th>
+            <th scope="col">Opções</th>
             </tr>
             @foreach($finAlvara as $fin)
             <tr scope="row">
@@ -66,6 +68,15 @@
             <td>{{$fin->nome}}</td>
             <td>{{$fin->descricao}}</td>
             <td>{{$fin->valor}}</td>
+            <td>
+                <form action="/ferramentasAdm/FinalidadeAlvara/{{$fin->id}}" method="POST">
+                        {{ csrf_field() }}
+                        
+                    <a href="/ferramentasAdm/FinalidadeAlvara/{{$fin->id}}/edit" >
+                    Editar</a>
+                    
+                </form>
+            </td>
 
             </tr>
             @endforeach

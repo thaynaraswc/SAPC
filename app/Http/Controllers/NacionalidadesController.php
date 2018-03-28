@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Nacionalidades;
+use App\Models\Nacionalidades as nacionalidade;
 use Illuminate\Http\Request;
 
 class NacionalidadesController extends Controller
@@ -14,7 +14,8 @@ class NacionalidadesController extends Controller
      */
     public function index()
     {
-        //
+        $nacionalidade = nacionalidade::all();
+        return view('/ferramentasAdm/Nacionalidade/create', compact('nacionalidade'));
     }
 
     /**
@@ -24,7 +25,8 @@ class NacionalidadesController extends Controller
      */
     public function create()
     {
-        //
+        $nacionalidade = nacionalidade::orderBy('descricao', 'asc')->get();
+        return view('/ferramentasAdm/Nacionalidade/create', compact('nacionalidade'));
     }
 
     /**
@@ -35,7 +37,10 @@ class NacionalidadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nacionalidade = new nacionalidade;
+        $nacionalidade->descricao = $request->nomeNacionalidade;
+        $nacionalidade->save();
+        return redirect('/ferramentasAdm/Nacionalidade/create'); 
     }
 
     /**
