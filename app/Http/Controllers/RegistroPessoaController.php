@@ -64,7 +64,7 @@ class RegistroPessoaController extends Controller
         $registroPessoa->localTrabalho = $request->localTrabalho;
         $registroPessoa->sexoPessoa = $request->sexoPessoa;
         $registroPessoa->save();
-        return redirect('registroPessoa/create');
+        view('registroPessoa/create', compact('estados'));
         
     }
 
