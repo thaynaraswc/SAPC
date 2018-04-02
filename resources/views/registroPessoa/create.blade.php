@@ -235,11 +235,15 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="estadoEnderecoPessoa">Estado</label>
-                                                <select class="form-control" id="estadoEnderecoPessoa" name="estadoEnderecoPessoa">
-                                                <option>Tocantins</option>
-                                                <option>Pará</option>
-                                                <option>Maranhão</option>
-                                                </select>
+                                                <select id="estado" name="estado" style="width: 100%; height: 28px;">
+                                                    @foreach($estados as $estado)
+                                                    @if($estado['id'] == '27')
+                                                        <option selected value="{{$estado['id']}}"> {{ $estado['descricao'] }} </option>
+                                                    @else
+                                                        <option value="{{ $estado['id'] }}"> {{ $estado['descricao'] }} </option>
+                                                    @endif
+                                                    @endforeach
+                                                </select> 
                                             </div>
                                         </div>
                                     </div>
@@ -247,11 +251,9 @@
                                     <div class="col">
                                         <div class="form-group">
                                         <label for="cidadeEnderecoPessoa">Cidade</label>
-                                                <select class="form-control" id="cidadeEnderecoPessoa" name="cidadeEnderecoPessoa">
-                                                <option>Palmas</option>
-                                                <option>Gurupi</option>
-                                                <option>Araguaína</option>
-                                                </select>
+                                        <select id="municipio" name="municipio" style="width: 100%;  height: 28px;" >
+                                            <option> Cidade </option>
+                                        </select>
                                             </div>
                                         </div>
                                     
@@ -284,5 +286,7 @@
 </div>
 
 
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+<script src="js/regioes.js"></script>
 @endsection

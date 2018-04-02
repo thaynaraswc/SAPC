@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RegistroPessoa as registroPessoa;
+use App\Models\Estados as estados;
 use Illuminate\Http\Request;
 
 class RegistroPessoaController extends Controller
@@ -33,6 +34,7 @@ class RegistroPessoaController extends Controller
      */
     public function create()
     {
+        $estados = estados::all();
         return view('registroPessoa/create');
     }
 
@@ -45,6 +47,7 @@ class RegistroPessoaController extends Controller
     public function store(Request $request)
     {
         $registroPessoa = new registroPessoa;
+        
         $registroPessoa->nomePessoa = $request->nomePessoa;
         $registroPessoa->escolaridade = $request->escolaridade;
         $registroPessoa->nacionalidade = $request->nacionalidade;
