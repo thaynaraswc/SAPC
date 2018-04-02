@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EstadoCivil as estadocivil;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
-class EstadoCivilController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class EstadoCivilController extends Controller
      */
     public function index()
     {
-        $estadocivil = estadocivil::all();
-        return view('/ferramentasAdm/estadoCivil/create', compact('estadocivil'));
+        return view('faq');
     }
 
     /**
@@ -25,8 +24,7 @@ class EstadoCivilController extends Controller
      */
     public function create()
     {
-        $estadocivil = estadocivil::orderBy('descricao', 'asc')->get();
-        return view('/ferramentasAdm/estadoCivil/create', compact('estadocivil'));
+        //
     }
 
     /**
@@ -37,19 +35,16 @@ class EstadoCivilController extends Controller
      */
     public function store(Request $request)
     {
-        $estadocivil = new estadocivil;
-        $estadocivil->descricao = $request->estadoCivil;
-        $estadocivil->save();
-        return redirect('/ferramentasAdm/estadoCivil/create'); 
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\EstadoCivil  $estadoCivil
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(EstadoCivil $estadoCivil)
+    public function show(Faq $faq)
     {
         //
     }
@@ -57,10 +52,10 @@ class EstadoCivilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\EstadoCivil  $estadoCivil
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(EstadoCivil $estadoCivil)
+    public function edit(Faq $faq)
     {
         //
     }
@@ -69,10 +64,10 @@ class EstadoCivilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\EstadoCivil  $estadoCivil
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EstadoCivil $estadoCivil)
+    public function update(Request $request, Faq $faq)
     {
         //
     }
@@ -80,10 +75,10 @@ class EstadoCivilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\EstadoCivil  $estadoCivil
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EstadoCivil $estadoCivil)
+    public function destroy(Faq $faq)
     {
         //
     }

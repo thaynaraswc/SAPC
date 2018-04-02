@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RegistroPessoa;
+use App\Models\RegistroPessoa as registroPessoa;
 use Illuminate\Http\Request;
 
 class RegistroPessoaController extends Controller
@@ -44,7 +44,25 @@ class RegistroPessoaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registroPessoa = new registroPessoa;
+        $registroPessoa->nomePessoa = $request->nomePessoa;
+        $registroPessoa->escolaridade = $request->escolaridade;
+        $registroPessoa->nacionalidade = $request->nacionalidade;
+        $registroPessoa->estadoCivil = $request->estadoCivil;
+        $registroPessoa->estadoNascimento = $request->estadoNascimento;
+        $registroPessoa->nomeMaePessoa = $request->nomeMaePessoa;
+        $registroPessoa->nomePaiPessoa = $request->nomePaiPessoa;
+        $registroPessoa->endereco_pessoa = $request->endereco_pessoa;
+        $registroPessoa->dataNascimento = $request->dataNascimento;
+        $registroPessoa->cidadeNascimento = $request->cidadeNascimento;
+        $registroPessoa->paisNascimento = $request->paisNascimento;
+        $registroPessoa->documentos_pessoa = $request->documentos_pessoa;
+        $registroPessoa->profissao = $request->profissao;
+        $registroPessoa->localTrabalho = $request->localTrabalho;
+        $registroPessoa->sexoPessoa = $request->sexoPessoa;
+        $registroPessoa->save();
+        return redirect('registroPessoa/create');
+        
     }
 
     /**

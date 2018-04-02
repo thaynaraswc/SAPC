@@ -17,28 +17,28 @@
         <div class="card">
             <h5 class="card-header text-center">Ferramentas do administrador</h5>
             <div class="card-body text-center">
-                <a href="/registroPessoa/create">
-                    <button type="button" class="btn btn-primary btn-lg">Escolaridade</button>
+                <a href="/ferramentasAdm/grauEscolaridade/create">
+                    <button type="button" class="btn btn-success btn-lg">Escolaridade</button>
                 </a>
 
                 <a href="/ferramentasAdm/Nacionalidade/create">
-                    <button type="button" class="btn btn-primary btn-lg">Nacionalidade</button>
+                    <button type="button" class="btn btn-success btn-lg">Nacionalidade</button>
                 </a>
 
-                <a href="/registroEmpresa/create">
-                    <button type="button" class="btn btn-primary btn-lg">Estado civil</button>
+                <a href="/ferramentasAdm/estadoCivil/create">
+                    <button type="button" class="btn btn-success btn-lg">Estado civil</button>
                 </a>
 
-                <a href="/registroEmpresa/create">
-                    <button type="button" class="btn btn-primary btn-lg">Sexo</button>
+                <a href="/ferramentasAdm/sexo/create">
+                    <button type="button" class="btn btn-success btn-lg">Sexo</button>
                 </a>
 
                 <a href="/ferramentasAdm/ProfissaoPessoa/create">
-                    <button type="button" class="btn btn-primary btn-lg">Profissão</button>
+                    <button type="button" class="btn btn-success btn-lg">Profissão</button>
                 </a>
 
                 <a href="/ferramentasAdm/FinalidadeAlvara/create">
-                    <button type="button" class="btn btn-primary btn-lg">Finalidade Alvará</button>
+                    <button type="button" class="btn btn-success btn-lg">Finalidade Alvará</button>
                 </a>
     
 

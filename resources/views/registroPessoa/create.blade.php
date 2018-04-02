@@ -40,7 +40,8 @@
                     <div class="card">
                         <h5 class="card-header text-center">Registro de pessoa</h5>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="/registroPessoa/create" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">

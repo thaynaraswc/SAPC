@@ -17,7 +17,7 @@ class CreateRegistroPessoasTable extends Migration
             $table->increments('id');
             $table->string('nomePessoa');
             $table->integer('escolaridade');
-            $table->string('nacionalidade');
+            $table->integer('nacionalidade');
             $table->integer('estadoCivil');
             $table->integer('estadoNascimento');
             $table->string('nomeMaePessoa');
@@ -42,7 +42,7 @@ class CreateRegistroPessoasTable extends Migration
         });
 
         Schema::table('registro_pessoas', function(Blueprint $table) {
-            $table->foreign('estadoCivil')->references('id')->on('estado_civil');
+            $table->foreign('estadoCivil')->references('id')->on('estado_civils');
         });
 
         Schema::table('registro_pessoas', function(Blueprint $table) {

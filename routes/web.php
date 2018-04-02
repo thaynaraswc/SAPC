@@ -18,9 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/faq', 'FaqController@index')->name('faq');
+
+
 Route::get('/registroPessoa/create', 'RegistroPessoaController@index')->name('registroPessoa/create');
+Route::post('/registroPessoa/create', 'RegistroPessoaController@store')->name('registroPessoa/create');
+
+
 Route::get('/registroEmpresa/create', 'RegistroEmpresaController@index')->name('registroEmpresa/create');
+
+
 Route::get('/registroOpcoes/show', 'RegistroOpcoesController@index')->name('/registroOpcoes/show');
+
 
 Route::get('/alvaraAnual/create', 'AlvaraAnualController@index')->name('/alvaraAnual/create');
 
@@ -38,3 +47,13 @@ Route::put('/ferramentasAdm/ProfissaoPessoa/{prof}','FrmtProfPessoaController@up
 
 Route::get('/ferramentasAdm/Nacionalidade/create', 'NacionalidadesController@create')->name('ferramentasAdm/Nacionalidade/create');
 Route::post('/ferramentasAdm/Nacionalidade/create', 'NacionalidadesController@store')->name('ferramentasAdm/Nacionalidade/create');
+
+
+Route::get('/ferramentasAdm/grauEscolaridade/create', 'GrauEscolaridadeController@index')->name('/ferramentasAdm/grauEscolaridade/create');
+Route::post('/ferramentasAdm/grauEscolaridade/create', 'GrauEscolaridadeController@store')->name('/ferramentasAdm/grauEscolaridade/create');
+
+Route::get('/ferramentasAdm/estadoCivil/create', 'EstadoCivilController@index')->name('/ferramentasAdm/estadoCivil/create');
+Route::post('/ferramentasAdm/estadoCivil/create', 'EstadoCivilController@store')->name('/ferramentasAdm/estadoCivil/create');
+
+Route::get('/ferramentasAdm/sexo/create', 'SexoPessoaController@index')->name('/ferramentasAdm/sexo/create');
+Route::post('/ferramentasAdm/sexo/create', 'SexoPessoaController@store')->name('/ferramentasAdm/sexo/create');

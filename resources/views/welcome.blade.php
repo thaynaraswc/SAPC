@@ -23,9 +23,11 @@
           <nav class="nav nav-masthead justify-content-center">
           @auth
             <a class="nav-link active"  href="{{ url('/home') }}">Início</a>
+            <a class="nav-link" href="/faq">Dúvidas frequentes</a>
           @else
             <a class="nav-link" href="{{ route('login') }}">Entrar</a>
             <a class="nav-link" href="{{ route('register') }}">Criar conta</a>
+            <a class="nav-link" href="/faq">Dúvidas frequentes</a>
             @endauth
           </nav>
         </div>

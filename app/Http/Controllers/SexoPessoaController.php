@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SexoPessoa;
+use App\Models\SexoPessoa as sexo;
 use Illuminate\Http\Request;
 
 class SexoPessoaController extends Controller
@@ -14,7 +14,8 @@ class SexoPessoaController extends Controller
      */
     public function index()
     {
-        //
+        $sexo = sexo::all();
+        return view('/ferramentasAdm/sexo/create', compact('sexo'));
     }
 
     /**
@@ -24,7 +25,8 @@ class SexoPessoaController extends Controller
      */
     public function create()
     {
-        //
+        $sexo = sexo::orderBy('descricao', 'asc')->get();
+        return view('/ferramentasAdm/sexo/create', compact('sexo'));
     }
 
     /**
@@ -35,7 +37,10 @@ class SexoPessoaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sexo = new sexo;
+        $sexo->descricao = $request->sexo;
+        $sexo->save();
+        return redirect('/ferramentasAdm/sexo/create'); 
     }
 
     /**

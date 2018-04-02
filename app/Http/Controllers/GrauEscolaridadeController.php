@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GrauEscolaridade;
+use App\Models\GrauEscolaridade as escolaridade;
 use Illuminate\Http\Request;
 
 class GrauEscolaridadeController extends Controller
@@ -14,7 +14,8 @@ class GrauEscolaridadeController extends Controller
      */
     public function index()
     {
-        //
+        $escolaridade = escolaridade::all();
+        return view('/ferramentasAdm/grauEscolaridade/create', compact('escolaridade'));
     }
 
     /**
@@ -24,7 +25,8 @@ class GrauEscolaridadeController extends Controller
      */
     public function create()
     {
-        //
+        $grauEsc = escolaridade::orderBy('descricao', 'asc')->get();
+        return view('/ferramentasAdm/grauEscolaridade/create', compact('escolaridade'));
     }
 
     /**
@@ -35,7 +37,10 @@ class GrauEscolaridadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $escolaridade = new escolaridade;
+        $escolaridade->descricao = $request->grauEscolaridade;
+        $escolaridade->save();
+        return redirect('/ferramentasAdm/grauEscolaridade/create'); 
     }
 
     /**
