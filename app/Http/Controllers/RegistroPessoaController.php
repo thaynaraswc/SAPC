@@ -35,7 +35,7 @@ class RegistroPessoaController extends Controller
     public function create()
     {
         $estados = estados::all();
-        return view('registroPessoa/create');
+        view('registroPessoa/create', compact('estados'));
     }
 
     /**
@@ -64,7 +64,7 @@ class RegistroPessoaController extends Controller
         $registroPessoa->localTrabalho = $request->localTrabalho;
         $registroPessoa->sexoPessoa = $request->sexoPessoa;
         $registroPessoa->save();
-        view('registroPessoa/create', compact('estados'));
+        return redirect('registroPessoa/create');
         
     }
 
