@@ -50,7 +50,7 @@
 </div>
 <div class="container" style="margin-top: 5%">
     <div class="card">
-        <h5 class="card-header text-center">Profissões já cadastradas</h5>
+        <h5 class="card-header text-center">Já cadastradas</h5>
         <div class="card-body text-center">
             <table class="table table-hover  table-sm text-center">
 
