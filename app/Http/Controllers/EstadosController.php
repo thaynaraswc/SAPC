@@ -48,12 +48,12 @@ class EstadosController extends Controller
      
     public function show($id)
     {
-
+        
         $estados = Estados::find($id);
         $estados = $estados->getMunicipios();
-        
+        dd($estados);
         return \Response::json($estados);
-
+        dd($estados);
         //return view('estados/show', compact('estados'));
     }
 
