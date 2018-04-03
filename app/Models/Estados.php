@@ -16,8 +16,8 @@ class Estados extends Model
 
 	public function getMunicipios()
 	{
-		$descricoes = Municipios::where('estado', $this->model->id)->pluck('descricao');
-		$ids = Municipios::where('estado', $this->model->id)->pluck('id');
+		$descricoes = Municipios::where('estado',  $this->id)->pluck('descricao');
+		$ids = Municipios::where('estado',  $this->id)->pluck('id');
 		$i = 0;
 
 		foreach ($ids as $id) 
