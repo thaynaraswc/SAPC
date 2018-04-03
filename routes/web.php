@@ -23,7 +23,7 @@ Route::get('/faq', 'FaqController@index')->name('faq');
 
 Route::get('/registroPessoa/create', 'RegistroPessoaController@index')->name('registroPessoa/create');
 Route::post('/registroPessoa/create', 'RegistroPessoaController@store')->name('registroPessoa/create');
-
+Route::get('/registroPessoa/create', 'RegistroPessoaController@create')->name('registroPessoa/create');
 
 Route::get('/registroEmpresa/create', 'RegistroEmpresaController@index')->name('registroEmpresa/create');
 

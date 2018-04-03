@@ -125,11 +125,15 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="estadoNascimento">Estado de nascimento</label>
-                                            <select class="form-control" id="estadoNascimento" name="estadoNascimento">
-                                            <option>Tocantins</option>
-                                            <option>Pará</option>
-                                            
-                                            </select>
+                                            <select id="estado" name="estado" class="form-control">
+                                                @foreach($estados as $estado)
+                                                @if($estado['id'] == '27')
+                                                    <option selected value="{{$estado['id']}}"> {{ $estado['descricao'] }} </option>
+                                                @else
+                                                    <option value="{{ $estado['id'] }}"> {{ $estado['descricao'] }} </option>
+                                                @endif
+                                                @endforeach
+                                            </select> 
                                         </div>
                                     </div>
                                     <div class="col">
@@ -235,7 +239,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="estadoEnderecoPessoa">Estado</label>
-                                                <select id="estado" name="estado" style="width: 100%; height: 28px;">
+                                                <select class="form-control" id="estado" name="estado">
                                                     @foreach($estados as $estado)
                                                     @if($estado['id'] == '27')
                                                         <option selected value="{{$estado['id']}}"> {{ $estado['descricao'] }} </option>
@@ -251,7 +255,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                         <label for="cidadeEnderecoPessoa">Cidade</label>
-                                        <select id="municipio" name="municipio" style="width: 100%;  height: 28px;" >
+                                        <select class="form-control" id="municipio" name="municipio" >
                                             <option> Cidade </option>
                                         </select>
                                             </div>
