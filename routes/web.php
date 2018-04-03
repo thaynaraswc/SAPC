@@ -57,3 +57,5 @@ Route::post('/ferramentasAdm/estadoCivil/create', 'EstadoCivilController@store')
 
 Route::get('/ferramentasAdm/sexo/create', 'SexoPessoaController@index')->name('/ferramentasAdm/sexo/create');
 Route::post('/ferramentasAdm/sexo/create', 'SexoPessoaController@store')->name('/ferramentasAdm/sexo/create');
+
+Route::get('/estados/{id}', 'EstadosController@show');

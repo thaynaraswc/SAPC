@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Municipios;
+use App\Models\Municipios as Municipios;
 use Illuminate\Http\Request;
 
 class MunicipiosController extends Controller
@@ -44,9 +44,10 @@ class MunicipiosController extends Controller
      * @param  \App\Models\Municipios  $municipios
      * @return \Illuminate\Http\Response
      */
-    public function show(Municipios $municipios)
+    public function show($id)
     {
-        //
+        $municipios = Municipios::where('estado', $id)->get();
+        return view('municipios/show', compact('municipios'));
     }
 
     /**

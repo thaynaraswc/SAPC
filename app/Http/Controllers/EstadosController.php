@@ -44,10 +44,12 @@ class EstadosController extends Controller
      * @param  \App\Models\Estados  $estados
      * @return \Illuminate\Http\Response
      */
+
+     
     public function show($id)
     {
 
-        $estados = new Estados($id);
+        $estados = Estados::find($id);
         $estados = $estados->getMunicipios();
         
         return \Response::json($estados);
