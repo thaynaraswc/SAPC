@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\RegistroPessoa as registroPessoa;
 use App\Models\Estados as estados;
+use App\Models\Municipios as Municipios;
+use App\Models\GrauEscolaridade as escolaridade;
+use App\Models\EstadoCivil as estadoCivil;
+use App\Models\FrmtProfPessoa as FrmtProfPessoa;
+use App\Models\SexoPessoa as SexoPessoa;
+use App\Models\Paises as Paises;
+use App\Models\EnderecoPessoa as EnderecoPessoa;
 use Illuminate\Http\Request;
 
 class RegistroPessoaController extends Controller
@@ -35,7 +42,14 @@ class RegistroPessoaController extends Controller
     public function create()
     {
         $estados = estados::all();
-        return view('registroPessoa/create', compact('estados'));
+        $municipios = Municipios::all();
+        $escolaridade = escolaridade::all();
+        $estadoCivil = estadoCivil::all();
+        $FrmtProfPessoa = FrmtProfPessoa::all();
+        $SexoPessoa = SexoPessoa::all();
+        $Paises = Paises::all();
+        //dd($municipios);
+        return view('registroPessoa/create', compact('estados', 'escolaridade','estadoCivil', 'FrmtProfPessoa', 'SexoPessoa'));
     }
 
     /**
@@ -50,7 +64,7 @@ class RegistroPessoaController extends Controller
         
         $registroPessoa->nomePessoa = $request->nomePessoa;
         $registroPessoa->escolaridade = $request->escolaridade;
-        $registroPessoa->nacionalidade = $request->nacionalidade;
+        
         $registroPessoa->estadoCivil = $request->estadoCivil;
         $registroPessoa->estadoNascimento = $request->estadoNascimento;
         $registroPessoa->nomeMaePessoa = $request->nomeMaePessoa;
@@ -58,7 +72,7 @@ class RegistroPessoaController extends Controller
         $registroPessoa->endereco_pessoa = $request->endereco_pessoa;
         $registroPessoa->dataNascimento = $request->dataNascimento;
         $registroPessoa->cidadeNascimento = $request->cidadeNascimento;
-        $registroPessoa->paisNascimento = $request->paisNascimento;
+       
         $registroPessoa->documentos_pessoa = $request->documentos_pessoa;
         $registroPessoa->profissao = $request->profissao;
         $registroPessoa->localTrabalho = $request->localTrabalho;

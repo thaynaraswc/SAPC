@@ -26,7 +26,7 @@ Route::post('/registroPessoa/create', 'RegistroPessoaController@store')->name('r
 Route::get('/registroPessoa/create', 'RegistroPessoaController@create')->name('registroPessoa/create');
 
 Route::get('/registroEmpresa/create', 'RegistroEmpresaController@index')->name('registroEmpresa/create');
-
+Route::get('/registroEmpresa/create', 'RegistroEmpresaController@create')->name('registroEmpresa/create');
 
 Route::get('/registroOpcoes/show', 'RegistroOpcoesController@index')->name('/registroOpcoes/show');
 

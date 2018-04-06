@@ -15,7 +15,7 @@ class CreateEnderecoPessoasTable extends Migration
     {
         Schema::create('endereco_pessoa', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tipoEnderecoPessoa');
+
             $table->string('cepEnderecoPessoa');
             $table->string('bairoEnderecoPessoa');
             $table->string('enderecoPessoa');
@@ -27,9 +27,6 @@ class CreateEnderecoPessoasTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('endereco_pessoa', function(Blueprint $table) {
-            $table->foreign('tipoEnderecoPessoa')->references('id')->on('tipo_enderecos');
-        });
 
         Schema::table('endereco_pessoa', function(Blueprint $table) {
             $table->foreign('estadoEnderecoPessoa')->references('id')->on('estados');

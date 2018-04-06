@@ -94,32 +94,13 @@
                                     <div class="col">
                                     <label for="sexoPessoa">Sexo</label>
                                     <select class="form-control" id="sexoPessoa" name="sexoPessoa">
-                                    <option>Feminino</option>
-                                    <option>Masculino</option>
-                                    <option>Não informado</option>
+                                        @foreach($SexoPessoa as $SexoPessoa)
+                                            <option selected value="{{$SexoPessoa['id']}}"> {{ $SexoPessoa['descricao'] }} </option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="nacionalidades">Nacionalidade</label>
-                                            <select class="form-control" id="nacionalidades" name="nacionalidades">
-                                            <option>Brasileiro</option>
-                                            <option>Estrangeiro</option>
-                                            
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                    <label for="paisNascimento">País de nascimento</label>
-                                    <select class="form-control" id="paisNascimento" name="paisNascimento">
-                                    <option>Alemanha</option>
-                                    <option>Brasil</option>
-                                    <option>Espanha</option>
-                                    </select>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="row">
                                     <div class="col">
@@ -139,9 +120,10 @@
                                     <div class="col">
                                     <label for="cidadeNascimento">Cidade de nascimento</label>
                                     <select class="form-control" id="cidadeNascimento" name="cidadeNascimento">
-                                    <option>Palmas</option>
-                                    <option>Araguaína</option>
-                                    <option>Gurupi</option>
+                                        <option> Selecione uma cidade </option>
+                                        <option value="1">Palmas</option>
+                                        <option value="2">Araguaína</option>
+                                        <option value="3">Gurupi</option>
                                     </select>
                                     </div>
                                 </div>
@@ -152,10 +134,9 @@
                                         <div class="form-group">
                                             <label for="profissao">Profissão</label>
                                             <select class="form-control" id="profissao" name="profissao">
-                                            <option>Administrador</option>
-                                            <option>Advogado</option>
-                                            <option>Barman</option>
-                                            <option>Biólogo</option>
+                                            @foreach($FrmtProfPessoa as $FrmtProfPessoa)
+                                            <option selected value="{{$FrmtProfPessoa['id']}}"> {{ $FrmtProfPessoa['descricao'] }} </option>
+                                            @endforeach
                                             
                                             </select>
                                         </div>
@@ -171,9 +152,9 @@
                                         <div class="form-group">
                                             <label for="estadoCivil">Estado Civil</label>
                                             <select class="form-control" id="estadoCivil" name="estadoCivil">
-                                            <option>Solteiro</option>
-                                            <option>Casado</option>
-                                            <option>Divorciado</option>
+                                            @foreach($estadoCivil as $estadoCivil)
+                                            <option selected value="{{$estadoCivil['id']}}"> {{ $estadoCivil['descricao'] }} </option>
+                                            @endforeach
                                             
                                             </select>
                                         </div>
@@ -181,12 +162,9 @@
                                     <div class="col">
                                     <label for="escolaridade">Escolaridade</label>
                                     <select class="form-control" id="escolaridade" name="escolaridade">
-                                    <option>1º grau incompleto (ensino fundamental)</option>
-                                    <option>1º grau completo (ensino fundamental)</option>
-                                    <option>2º grau incompleto (ensino médio)</option>
-                                    <option>2º grau completo (ensino médio)</option>
-                                    <option>Superior Incompleto</option>
-                                    <option>Superior Completo</option>
+                                    @foreach($escolaridade as $escolaridade)
+                                    <option selected value="{{$escolaridade['id']}}"> {{ $escolaridade['descricao'] }} </option>
+                                    @endforeach
                                     </select>
                                     </div>
                                 </div>
@@ -194,15 +172,7 @@
                                 <div style="border-top: 3px solid #1b88fd">
                                 <h4 class="text-center" style="margin-top: 15px">Endereço</h4 >
                                     <div class="row" style="margin-top: 3%">
-                                        <div class="col">
-                                            <div class="form-group">
-                                            <label for="tipoEnderecoPessoa">Tipo de endereço</label>
-                                            <select class="form-control" id="tipoEnderecoPessoa" name="tipoEnderecoPessoa">
-                                            <option>Comercial</option>
-                                            <option>Residencial</option>
-                                            </select>
-                                        </div>
-                                        </div>
+                                        
                                         <div class="col">
                                         <div class="form-group">
                                                 <label for="cepEnderecoPessoa">CEP</label>
@@ -257,6 +227,9 @@
                                         <label for="cidadeEnderecoPessoa">Cidade</label>
                                         <select class="form-control" id="municipio" name="municipio" >
                                             <option> Selecione uma cidade </option>
+                                            <option value="1">Palmas</option>
+                                            <option value="2">Araguaína</option>
+                                            <option value="3">Gurupi</option>
                                         </select>
                                             </div>
                                         </div>
@@ -269,19 +242,14 @@
                                             </div>
                                     </div>
                                 </div>
-                                <a href="#" style="margin-top:3%; float:right" class="btn btn-primary">Próximo</a>
+                                <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
                            
                         </div>
                         
                     </div>
                     
                 </div>
-                
-
-
-
-
-                
+                                
             </form>
                
             </div>
@@ -290,9 +258,12 @@
 </div>
 @endsection
     @section('js')
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    
+   
     <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
     <script src="js/regioes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

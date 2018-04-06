@@ -11,19 +11,22 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/home">Início <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="/registroOpcoes/show">Registro <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="#">Relatórios</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="#">Vistoria</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/alvaraAnual/create">Alvará</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/ferramentasAdm/show">Administrador</a>
           </li>
           <!--

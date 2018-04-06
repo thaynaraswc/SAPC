@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estados;
+use App\Models\Municipios;
 use Illuminate\Http\Request;
 
 class EstadosController extends Controller
@@ -51,7 +52,7 @@ class EstadosController extends Controller
         
         $estados = Estados::find($id);
         $estados = $estados->getMunicipios();
-        dd($estados);
+        dd($municipios);
         return \Response::json($estados);
         dd($estados);
         //return view('estados/show', compact('estados'));

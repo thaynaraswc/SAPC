@@ -37,12 +37,11 @@
                 <div class="form-group">
                     <label for="tipoEstabelecimento">Tipo de estabelecimento / evento</label>
                     <select class="form-control" id="tipoEstabelecimento">
-                    <option>Fábrica de cimento</option>
-                    <option>Pedreira</option>
-                    <option>Caieira</option>
-                    <option>Fornecedora, locadora e ou instaladora de sistema de alarme e monitoramento</option>
-                    <option>Industrializaçao e/ou comercialização de explosivo e outros produtos controlados</option>
-                    <option>Industrialização e/ou comercialização de fogos de artifício ou pirotécnicos</option>
+                        @foreach($FrmtFinAlvara as $FrmtFinAlvara)
+                        
+                            <option selected value="{{$FrmtFinAlvara['id']}}"> {{ $FrmtFinAlvara['nome'] }} </option>
+                        
+                        @endforeach
                     </select>
                 </div>
                 <div class="row">
@@ -121,9 +120,13 @@
                         <div class="form-group">
                             <label for="estadoEnderecoEmpresa">Estado</label>
                             <select class="form-control" id="estadoEnderecoEmpresa" name="estadoEnderecoEmpresa">
-                            <option>Tocantins</option>
-                            <option>Pará</option>
-                            <option>Maranhão</option>
+                                @foreach($estados as $estado)
+                                @if($estado['id'] == '27')
+                                    <option selected value="{{$estado['id']}}"> {{ $estado['descricao'] }} </option>
+                                @else
+                                    <option value="{{ $estado['id'] }}"> {{ $estado['descricao'] }} </option>
+                                @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>
