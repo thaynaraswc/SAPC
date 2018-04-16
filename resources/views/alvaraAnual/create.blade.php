@@ -93,14 +93,13 @@
 
                 <div class="form-group">
                     <label for="finalidadeAlvara">Finalidade</label>
-                    <select class="form-control" id="finalidadeAlvara">
-                    <option>LICENÇA PARA USO DE EXPLOSIVO </option>
-                    <option> EMPRESA FORNECEDORA, LOCADORA E OU INSTALADORA DE SISTEMA DE ALARME E MONITORAMENTO</option>
-                    <option>AUTORIZAÇÃO PARA USO DE EXPLOSIVO</option>
-                    <option> HOTEL, MOTEL, PENSÃO, POUSADAS E SIMILARES</option>
-                    <option>BOATE, RESTAURANTES DANÇANTES E SIMILARES</option>
-                    <option>CINEMA, BOLICHE (POR PISTA), CLUBE SÓCIO-RECRATIVO E SIMILARES</option>
-                    </select>
+                    <select id="finalidadeAlvara" name="finalidadeAlvara" class="form-control">
+                        @foreach($alvaras as $alv)
+                        
+                            <option value="{{ $alv->id }}"> {{ $alv->nome }} </option>
+                        
+                        @endforeach
+                    </select> 
                 </div>
                 <a href="#" style="margin-top:3%; float:right" class="btn btn-primary">Próximo</a>
             </div>

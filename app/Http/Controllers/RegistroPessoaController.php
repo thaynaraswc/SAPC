@@ -72,7 +72,7 @@ class RegistroPessoaController extends Controller
         $registroPessoa->endereco_pessoa = $request->endereco_pessoa;
         $registroPessoa->dataNascimento = $request->dataNascimento;
         $registroPessoa->cidadeNascimento = $request->cidadeNascimento;
-       
+        
         $registroPessoa->documentos_pessoa = $request->documentos_pessoa;
         $registroPessoa->profissao = $request->profissao;
         $registroPessoa->localTrabalho = $request->localTrabalho;

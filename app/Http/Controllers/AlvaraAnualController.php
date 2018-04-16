@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\FrmtFinAlvara as alv;
 class AlvaraAnualController extends Controller
 {
     /**
@@ -31,7 +31,10 @@ class AlvaraAnualController extends Controller
      */
     public function create()
     {
-        return view('alvaraAnual/create');
+        $alvaras = alv::orderBy('nome', 'asc')->get();;
+        //dd($municipios);
+        
+        return view('alvaraAnual/create', compact('alvaras'));
     }
 
     /**

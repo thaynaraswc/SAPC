@@ -74,7 +74,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="nomeMaePessoa">Nome da mãe</label>
-                                            <input type="text" class="form-control" id="nomeMaePessoa" namme="nomeMaePessoa" placeholder="Nome da mãe">
+                                            <input type="text" class="form-control" id="nomeMaePessoa" name="nomeMaePessoa" placeholder="Nome da mãe">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -109,9 +109,9 @@
                                             <select id="estado" name="estado" class="form-control">
                                                 @foreach($estados as $estado)
                                                 @if($estado['id'] == '27')
-                                                    <option selected value="{{$estado['id']}}"> {{ $estado['descricao'] }} </option>
+                                                    <option selected value="{{$estado->id}}"> {{ $estado->descricao }} </option>
                                                 @else
-                                                    <option value="{{ $estado['id'] }}"> {{ $estado['descricao'] }} </option>
+                                                    <option value="{{ $estado->id }}"> {{ $estado->descricao }} </option>
                                                 @endif
                                                 @endforeach
                                             </select> 

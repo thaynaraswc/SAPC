@@ -10,5 +10,4 @@ class RegistroPessoa extends Model
     protected $fillable = ['id', 'nomePessoa', 'escolaridade',  'estadoCivil', 'estadoNascimento', 'nomeMaePessoa', 'nomePaiPessoa',
                             'endereco_pessoa', 'dataNascimento', 'cidadeNascimento',  'documentos_pessoa', 'profissao', 'localTrabalho', 'sexoPessoa'];
 
-
 }

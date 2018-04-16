@@ -24,7 +24,7 @@ class FrmtFinAlvaraController extends Controller
      */
     public function create()
     {
-        $finAlvara = FinAlvara::orderBy('nome', 'asc')->get();;
+        $finAlvara = FinAlvara::orderBy('nome', 'asc')->get();
         return view('ferramentasAdm/FinalidadeAlvara/create', compact('finAlvara'));
     }
 
