@@ -106,7 +106,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="estadoNascimento">Estado de nascimento</label>
-                                            <select id="estado" name="estado" class="form-control">
+                                            <select id="estadoNascimento" name="estadoNascimento" class="form-control">
                                                 @foreach($estados as $estado)
                                                 @if($estado['id'] == '27')
                                                     <option selected value="{{$estado->id}}"> {{ $estado->descricao }} </option>

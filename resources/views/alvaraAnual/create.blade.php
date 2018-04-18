@@ -59,7 +59,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="cpfCNPJ">CPF/CNPJ</label>
-                            <input type="text" class="form-control" id="cpfCNPJ" placeholder="CPF/CNPJ">
+                            <input type="number" class="form-control" id="cpfCNPJ" placeholder="CPF/CNPJ">
                         </div>
                     </div>
                     <div class="col">
