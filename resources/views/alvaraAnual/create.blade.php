@@ -68,6 +68,14 @@
                             <input type="text" class="form-control" id="inscricaoEstadual" placeholder="Inscrição Estadual">
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <a href="#">
+                            <i class="fas fa-search"></i>
+                                <button type="button" class="btn btn-primary" style="margin-top:10%;">Buscar</button>
+                            </a>
+                        </div>    
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="modalidadeAlvara">Modalidade</label>
