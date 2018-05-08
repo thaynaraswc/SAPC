@@ -103,30 +103,12 @@
                                 </li>
 
                                 <li>
-                                    Cópias dos documentos pessoais dos sócios da empresa;
+                                    Atestado da Vigilância Sanitária;
                                 </li>
 
                                 <li>
-                                    Título de Registro do Exército Brasileiro relativos aos itens 1.2.4 e 1.2.5
-                                </li>
-
-                                <li>
-                                    Certificado de Registro do Exército Brasileiro relativos aos demais itens;
-                                </li>
-
-                                <li>
-                                    Relação de produtos explosivos que contém estocado em paiol;
-                                </li>
-
-                                <li>
-                                    Relação dos funcionários que manuseiam explosivos com respectiva fotocópia
-                                    do certificado da carteira blaster;
-                                </li>
-
-                                <li>
-                                    Certificado de Licença de Funcionamento expedido pela Polícia Federal,
-                                    tratando-se do exercício de atividade não eventual com produtos químicos
-                                    controlados;
+                                    Certificação de Regularidade do Sistema de Segurança Contra Incêndio e
+                                    Pânico emitido pelo Corpo de Bombeiros Militar;
                                 </li>
 
                                 <li>

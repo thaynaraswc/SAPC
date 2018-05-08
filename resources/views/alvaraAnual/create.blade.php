@@ -51,6 +51,77 @@
 <div style="border-top: 3px solid #1b88fd">
 
     <div class="card">
+        <h5 class="card-header text-center">Conferência de documentos</h5>
+        <div class="card-body">
+            <form>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                            <label for="cpfCNPJ">Requerimento firmado pelo responsável;</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <label for="inscricaoEstadual">Inscrição Estadual (JUCETINS);</label>
+                        </div>    
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                <label for="inscricaoEstadual">Alvará de Localização e Funcionamento expedido pelo Município;</label>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                            <label for="inscricaoEstadual">CNPJ (Receita Federal) ou Declaração de Micro-Empresa;</label>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                <label for="inscricaoEstadual">Cópias dos documentos pessoais dos sócios da empresa;</label>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                            <label for="inscricaoEstadual">Título de Registro do Exército Brasileiro</label>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" style="margin-top:3%; float:right" class="btn btn-primary">Próximo</a>
+            </div>
+        
+        </div>
+    
+    </div>
+
+</form>
+
+</div>
+</div>
+<div style="margin-top: 5%" class="container">
+
+
+
+<div style="border-top: 3px solid #1b88fd">
+
+    <div class="card">
         <h5 class="card-header text-center">Alvará Anual</h5>
         <div class="card-body">
             <form>
@@ -119,9 +190,12 @@
 </form>
 
 </div>
+
 </div>
 </div>
 </div>
+</div>
+
 
 
 
