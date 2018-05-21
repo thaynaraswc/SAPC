@@ -13,7 +13,7 @@ class CreateEnderecoPessoasTable extends Migration
      */
     public function up()
     {
-        Schema::create('endereco_pessoa', function (Blueprint $table) {
+        Schema::create('endereco_pessoas', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('cepEnderecoPessoa');
@@ -28,11 +28,11 @@ class CreateEnderecoPessoasTable extends Migration
         });
 
 
-        Schema::table('endereco_pessoa', function(Blueprint $table) {
+        Schema::table('endereco_pessoas', function(Blueprint $table) {
             $table->foreign('estadoEnderecoPessoa')->references('id')->on('estados');
         });
 
-        Schema::table('endereco_pessoa', function(Blueprint $table) {
+        Schema::table('endereco_pessoas', function(Blueprint $table) {
             $table->foreign('cidadeEnderecoPessoa')->references('id')->on('municipios');
         });
 

@@ -11,6 +11,7 @@ use App\Models\FrmtProfPessoa as FrmtProfPessoa;
 use App\Models\SexoPessoa as SexoPessoa;
 use App\Models\Paises as Paises;
 use App\Models\EnderecoPessoa as EnderecoPessoa;
+use App\Models\DocumentosPessoa as DocumentosPessoa;
 use Illuminate\Http\Request;
 
 class RegistroPessoaController extends Controller
@@ -48,8 +49,10 @@ class RegistroPessoaController extends Controller
         $FrmtProfPessoa = FrmtProfPessoa::all();
         $SexoPessoa = SexoPessoa::all();
         $Paises = Paises::all();
+        $registroPessoa = registroPessoa::all();
+        $EnderecoPessoa = EnderecoPessoa::all();
         //dd($municipios);
-        return view('registroPessoa/create', compact('estados', 'escolaridade','estadoCivil', 'FrmtProfPessoa', 'SexoPessoa'));
+        return view('registroPessoa/create', compact('estados', 'escolaridade','estadoCivil', 'FrmtProfPessoa', 'SexoPessoa', 'registroPessoa'));
     }
 
     /**
@@ -60,11 +63,22 @@ class RegistroPessoaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $enderecoPessoa = new EnderecoPessoa;
+        $enderecoPessoa->cepEnderecoPessoa = $request->cepEnderecoPessoa;
+        $enderecoPessoa->bairoEnderecoPessoa = $request->bairoEnderecoPessoa;
+        $enderecoPessoa->enderecoPessoa = $request->enderecoPessoa;
+        $enderecoPessoa->numeroEnderecoPessoa = $request->numeroEnderecoPessoa;
+        $enderecoPessoa->complementoEnderecoPessoa = $request->complementoEnderecoPessoa;
+        $enderecoPessoa->estadoEnderecoPessoa = $request->estadoEnderecoPessoa;
+        $enderecoPessoa->cidadeEnderecoPessoa = $request->cidadeEnderecoPessoa;
+        $enderecoPessoa->referenciaEnderecoPessoa = $request->referenciaEnderecoPessoa;
+
+        $enderecoPessoa->save();
+
         $registroPessoa = new registroPessoa;
-        
         $registroPessoa->nomePessoa = $request->nomePessoa;
         $registroPessoa->escolaridade = $request->escolaridade;
-        
         $registroPessoa->estadoCivil = $request->estadoCivil;
         $registroPessoa->estadoNascimento = $request->estadoNascimento;
         $registroPessoa->nomeMaePessoa = $request->nomeMaePessoa;
@@ -72,11 +86,13 @@ class RegistroPessoaController extends Controller
         $registroPessoa->endereco_pessoa = $request->endereco_pessoa;
         $registroPessoa->dataNascimento = $request->dataNascimento;
         $registroPessoa->cidadeNascimento = $request->cidadeNascimento;
-        
-        $registroPessoa->documentos_pessoa = $request->documentos_pessoa;
+        //$registroPessoa->documentos_pessoa = $request->documentos_pessoa;
         $registroPessoa->profissao = $request->profissao;
         $registroPessoa->localTrabalho = $request->localTrabalho;
         $registroPessoa->sexoPessoa = $request->sexoPessoa;
+        //$registroPessoa->save();
+
+        $registroPessoa->endereco_pessoa = $enderecoPessoa->id;
         $registroPessoa->save();
         return redirect('registroPessoa/create');
         

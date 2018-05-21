@@ -61,3 +61,6 @@ Route::get('/ferramentasAdm/sexo/create', 'SexoPessoaController@index')->name('/
 Route::post('/ferramentasAdm/sexo/create', 'SexoPessoaController@store')->name('/ferramentasAdm/sexo/create');
 
 Route::get('/estados/{id}', 'EstadosController@show');
+
+Route::get('/viewpdf', 'PdfviewController@index');
+Route::get('pdf/notificacao-regularidade', 'NotificacaoPDFController@index');

@@ -17,16 +17,16 @@ class CreateRegistroPessoasTable extends Migration
             $table->increments('id');
             $table->string('nomePessoa');
             $table->integer('escolaridade');
-            $table->integer('nacionalidade');
+            //$table->integer('nacionalidade');
             $table->integer('estadoCivil');
             $table->integer('estadoNascimento');
             $table->string('nomeMaePessoa');
             $table->string('nomePaiPessoa');
-            $table->integer('endereco_pessoa');
+            $table->integer('endereco_pessoas');
             $table->string('dataNascimento');
             $table->integer('cidadeNascimento');
-            $table->integer('paisNascimento');
-            $table->integer('documentos_pessoa');
+            //$table->integer('paisNascimento');
+            //$table->integer('documentos_pessoa');
             $table->string('profissao');
             $table->string('localTrabalho');
             $table->integer('sexoPessoa');
@@ -37,9 +37,9 @@ class CreateRegistroPessoasTable extends Migration
             $table->foreign('escolaridade')->references('id')->on('grau_escolaridades');
         });
 
-        Schema::table('registro_pessoas', function(Blueprint $table) {
-            $table->foreign('nacionalidade')->references('id')->on('nacionalidades');
-        });
+//        Schema::table('registro_pessoas', function(Blueprint $table) {
+//            $table->foreign('nacionalidade')->references('id')->on('nacionalidades');
+//        });
 
         Schema::table('registro_pessoas', function(Blueprint $table) {
             $table->foreign('estadoCivil')->references('id')->on('estado_civils');
@@ -53,17 +53,17 @@ class CreateRegistroPessoasTable extends Migration
             $table->foreign('cidadeNascimento')->references('id')->on('municipios');
         });
 
-        Schema::table('registro_pessoas', function(Blueprint $table) {
-            $table->foreign('paisNascimento')->references('id')->on('paises');
-        });
+//        Schema::table('registro_pessoas', function(Blueprint $table) {
+//            $table->foreign('paisNascimento')->references('id')->on('paises');
+//        });
 
         Schema::table('registro_pessoas', function(Blueprint $table) {
-            $table->foreign('endereco_pessoa')->references('id')->on('endereco_pessoa');
+            $table->foreign('endereco_pessoas')->references('id')->on('endereco_pessoas');
         });
 
-        Schema::table('registro_pessoas', function(Blueprint $table) {
-            $table->foreign('documentos_pessoa')->references('id')->on('documentos_pessoa');
-        });
+//        Schema::table('registro_pessoas', function(Blueprint $table) {
+//           $table->foreign('documentos_pessoa')->references('id')->on('documentos_pessoa');
+//        });
 
 
         Schema::table('registro_pessoas', function(Blueprint $table) {
