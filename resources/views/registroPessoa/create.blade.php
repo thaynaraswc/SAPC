@@ -27,6 +27,10 @@
                     <button type="button" class="btn btn-primary btn-lg">Cadastro de empresa</button>
                 </a>
 
+                <a href="/registroPessoa/show">
+                    <button type="button" class="btn btn-primary btn-lg">Ver cadastrados</button>
+                </a>
+
             </div>
         </div>
     </div>
@@ -243,53 +247,16 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
-                           
                         </div>
-                        
                     </div>
-                    
-                </div>
-                                
+                </div>       
             </form>
-               
             </div>
         </div>
     </div>
 </div>
 
-<div class="container" style="margin-top: 5%">
-    <div class="card">
-        <h5 class="card-header text-center">Profissões já cadastradas</h5>
-        <div class="card-body text-center">
-            <table class="table table-hover  table-sm  ">
 
-            <tr  class="bg-primary">
-            <th scope="col">Código</th>
-            <th scope="col">Descricao</th>
-            <th>Opções</th>
-            </tr>
-            @foreach($registroPessoa as $rp)
-            <tr scope="row">
-            <td>{{$rp->id}}</td>
-
-            <td>{{$rp->nomePessoa}}</td>
-            <td>
-                <form action="/ferramentasAdm/ProfissaoPessoa/{{$rp->id}}" method="POST">
-                        {{ csrf_field() }}
-                        
-                    <a href="/ferramentasAdm/ProfissaoPessoa/{{$rp->id}}/edit" >
-                    Editar</a>
-                    
-                </form>
-            </td>
-
-
-            </tr>
-            @endforeach
-            </table>
-        </div>
-    </div>
-</div>
 @endsection
     @section('js')
     

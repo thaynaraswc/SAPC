@@ -40,6 +40,10 @@
                 <a href="/ferramentasAdm/FinalidadeAlvara/create">
                     <button type="button" class="btn btn-success btn-lg">Finalidade Alvará</button>
                 </a>
+
+                <a href="/ferramentasAdm/delegacias/create">
+                    <button type="button" class="btn btn-success btn-lg">Delegacias</button>
+                </a>
     
 
             </div>

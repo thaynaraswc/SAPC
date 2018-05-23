@@ -106,7 +106,9 @@ class RegistroPessoaController extends Controller
      */
     public function show(RegistroPessoa $registroPessoa)
     {
-        //
+        $registroPessoa = registroPessoa::all();
+        $EnderecoPessoa = EnderecoPessoa::all();
+        return view('registroPessoa/show', compact('estados', 'escolaridade','estadoCivil', 'FrmtProfPessoa', 'SexoPessoa', 'registroPessoa'));
     }
 
     /**

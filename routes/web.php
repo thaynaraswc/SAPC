@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq', 'FaqController@index')->name('faq');
 
 
-Route::get('/registroPessoa/create', 'RegistroPessoaController@index')->name('registroPessoa/create');
+Route::get('/registroPessoa/show', 'RegistroPessoaController@show')->name('registroPessoa/show');
 Route::post('/registroPessoa/create', 'RegistroPessoaController@store')->name('registroPessoa/create');
 Route::get('/registroPessoa/create', 'RegistroPessoaController@create')->name('registroPessoa/create');
 
